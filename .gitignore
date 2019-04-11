@@ -13,7 +13,8 @@ target
 *.iws
 *.ddl
 rebel.xml
-*DB
+# vova: old value (*DB) commented, added (chapter08DB) instead
+chapter08DB
 *.dat
 .classpath
 .project
