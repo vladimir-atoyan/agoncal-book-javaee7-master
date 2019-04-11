@@ -25,6 +25,10 @@
         <module>chapter15</module>
     </modules>
 
+    <!-- testing on github for CRLF
+        this file is unix LF
+    -->
+
     <properties>
         <version.java>1.7</version.java>
         <!-- Java EE -->
