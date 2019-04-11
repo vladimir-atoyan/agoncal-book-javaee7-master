@@ -1,0 +1,59 @@
+
+  Table 1-2. Java Enterprise Edition Specification
+
+Java EE 7.0 342 http://jcp.org/en/jsr/detail?id=342
+Web Profile 7.0 342 http://jcp.org/en/jsr/detail?id=342
+Managed Beans 1.0 316 http://jcp.org/en/jsr/detail?id=316
+
+  Table 1-3. Web Services Specifications
+  
+JAX-WS (JavaTM API for XML-Based Web Services) 2.2a 224 http://jcp.org/en/jsr/detail?id=224
+JAXB 2.2 222 (JavaTM Architecture for XML Binding) http://jcp.org/en/jsr/detail?id=222
+Web Services 1.3 109 http://jcp.org/en/jsr/detail?id=109
+Web Services Metadata 2.1 181 http://jcp.org/en/jsr/detail?id=181
+JAX-RS 2.0 339 http://jcp.org/en/jsr/detail?id=339
+JSON-P 1.0 353 http://jcp.org/en/jsr/detail?id=353
+
+  Table 1-4. Web Specifications
+
+JSF 2.2 344 http://jcp.org/en/jsr/detail?id=344
+JSP 2.3 245 http://jcp.org/en/jsr/detail?id=245
+Debugging Support for Other Languages 1.0 45 http://jcp.org/en/jsr/detail?id=45
+JSTL (JavaServer Pages Standard Tag Library) 1.2 52 http://jcp.org/en/jsr/detail?id=52
+Servlet 3.1 340 http://jcp.org/en/jsr/detail?id=340
+WebSocket 1.0 356 http://jcp.org/en/jsr/detail?id=356
+Expression Language 3.0 341 http://jcp.org/en/jsr/detail?id=341
+
+  Table 1-5. Enterprise Specifications
+  
+EJB 3.2 345 http://jcp.org/en/jsr/detail?id=345
+Interceptors 1.2 318 http://jcp.org/en/jsr/detail?id=318
+JavaMail 1.5 919 http://jcp.org/en/jsr/detail?id=919
+JCA 1.7 322 http://jcp.org/en/jsr/detail?id=322
+JMS 2.0 343 http://jcp.org/en/jsr/detail?id=343
+JPA 2.1 338 http://jcp.org/en/jsr/detail?id=338
+JTA 1.2 907 http://jcp.org/en/jsr/detail?id=907
+
+  Table 1-6. Management, Security, and Other Specifications (Specification Version JSR URL)
+
+JACC 1.4 115 http://jcp.org/en/jsr/detail?id=115
+Bean Validation 1.1 349 http://jcp.org/en/jsr/detail?id=349
+Contexts and Dependency Injection 1.1 346 http://jcp.org/en/jsr/detail?id=346
+Dependency Injection for Java 1.0 330 http://jcp.org/en/jsr/detail?id=330
+Batch 1.0 352 http://jcp.org/en/jsr/detail?id=352
+Concurrency Utilities for Java EE 1.0 236 http://jcp.org/en/jsr/detail?id=236
+Java EE Management 1.1 77 http://jcp.org/en/jsr/detail?id=77
+Java Authentication Service Provider Interface for Containers 1.0 196 http://jcp.org/en/jsr/detail?id=196
+
+  Table 1-7. Related Enterprise Technologies in Java SE 7
+  
+Common Annotations 1.2 250 http://jcp.org/en/jsr/detail?id=250
+JDBC 4.1 221 http://jcp.org/en/jsr/detail?id=221
+JNDI 1.2
+JAXP 1.3 206 http://jcp.org/en/jsr/detail?id=206
+StAX 1.0 173 http://jcp.org/en/jsr/detail?id=173
+JAAS 1.0
+JMX 1.2 3 http://jcp.org/en/jsr/detail?id=3
+JAXB 2.2 222 http://jcp.org/en/jsr/detail?id=222
+JAF 1.1 925 http://jcp.org/en/jsr/detail?id=925
+SAAJ 1.3 http://java.net/projects/saaj  
