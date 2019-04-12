@@ -9,65 +9,65 @@ import javax.persistence.Table;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 
 //@Entity
 //@Table(name = "ex63_item")
-public class Item63 { 
+public class Item63 {
 
-  // ======================================
-  // =             Attributes             =
-  // ======================================
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
-//    @Id
+    //    @Id
 //    @GeneratedValue
 //    protected Long id;    
-  protected String title;
-  protected Float price;
-  protected String description;
- 
-  // ======================================
-  // =            Constructors            =
-  // ======================================
+    protected String title;
+    protected Float price;
+    protected String description;
 
-  public Item63() {
-  }
+    // ======================================
+    // =            Constructors            =
+    // ======================================
 
-  public Item63(String title, Float price, String description) {
-    this.title = title;
-    this.price = price;
-    this.description = description;
-  }
+    public Item63() {
+    }
 
-  // ======================================
-  // =          Getters & Setters         =
-  // ======================================
+    public Item63(String title, Float price, String description) {
+        this.title = title;
+        this.price = price;
+        this.description = description;
+    }
 
-  public String getTitle() {
-    return title;
-  }
+    // ======================================
+    // =          Getters & Setters         =
+    // ======================================
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
+    public String getTitle() {
+        return title;
+    }
 
-  public Float getPrice() {
-    return price;
-  }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-  public void setPrice(Float price) {
-    this.price = price;
-  }
+    public Float getPrice() {
+        return price;
+    }
 
-  public String getDescription() {
-    return description;
-  }
+    public void setPrice(Float price) {
+        this.price = price;
+    }
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
