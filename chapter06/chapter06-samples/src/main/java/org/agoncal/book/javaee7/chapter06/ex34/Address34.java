@@ -4,11 +4,11 @@ import javax.persistence.*;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 6 with Glassfish 3
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
- *         Address entity is mapped to different tables
+ * APress Book - Beginning Java EE 6 with Glassfish 3
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
+ * Address entity is mapped to different tables
  */
 @Entity
 @Table(name = "ex22_address")

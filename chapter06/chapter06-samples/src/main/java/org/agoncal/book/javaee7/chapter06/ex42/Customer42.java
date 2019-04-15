@@ -7,11 +7,11 @@ import javax.persistence.Transient;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 6 with Glassfish 3
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
- *         Simple entity
+ * APress Book - Beginning Java EE 6 with Glassfish 3
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
+ * Simple entity
  */
 @ExcludeSuperclassListeners()
 @EntityListeners(CustomerListener.class)

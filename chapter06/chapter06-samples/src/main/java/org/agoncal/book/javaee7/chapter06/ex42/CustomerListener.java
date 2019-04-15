@@ -4,10 +4,10 @@ import javax.persistence.*;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 6 with Glassfish 3
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 6 with Glassfish 3
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 public class CustomerListener {
 

@@ -82,7 +82,7 @@ public class Book36IT extends AbstractPersistentTest {
         book.raisePriceByTwoDollars();
         tx.commit();
         assertEquals("Version number should be 2", new Integer(2), book.getVersion());
-        assertEquals("Price shouls have been raise by 2 dollars", new Float(14.5), book.getPrice());
+        assertEquals("Price should have been raised by 2 dollars", new Float(14.5), book.getPrice());
     }
 
     @Test
@@ -104,6 +104,6 @@ public class Book36IT extends AbstractPersistentTest {
         book.raisePriceByTwoDollars();
         tx.commit();
         assertEquals("Version number should be 2", new Integer(2), book.getVersion());
-        assertEquals("Price shouls have been raise by 2 dollars", new Float(14.5), book.getPrice());
+        assertEquals("Price should have been raised by 2 dollars", new Float(14.5), book.getPrice());
     }
 }
