@@ -11,8 +11,14 @@ import java.util.HashMap;
  * --
  */
 @Entity
-@NamedQuery(name = "CD07.findAllCDs", query = "SELECT c FROM CD05 c")
+@NamedQuery(name = CD05.FIND_ALL, query = "SELECT c FROM CD05 c")
 public class CD05 {
+
+    // ======================================
+    // =             Constants              =
+    // ======================================
+
+    public static final String FIND_ALL = "CD05.findAllCDs";
 
     // ======================================
     // =             Attributes             =

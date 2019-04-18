@@ -10,8 +10,14 @@ import javax.persistence.*;
  * --
  */
 @Entity
-@NamedQuery(name = "Book07.findAllBooks", query = "SELECT b FROM Book05 b")
+@NamedQuery(name = Book05.FIND_ALL, query = "SELECT b FROM Book05 b")
 public class Book05 {
+
+    // ======================================
+    // =             Constants              =
+    // ======================================
+
+    public static final String FIND_ALL = "Book05.findAllBooks";
 
     // ======================================
     // =             Attributes             =

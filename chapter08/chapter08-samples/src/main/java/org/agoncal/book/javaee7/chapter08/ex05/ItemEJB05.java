@@ -34,12 +34,12 @@ public class ItemEJB05 {
     // ======================================
 
     public List<Book05> findBooks() {
-        TypedQuery<Book05> query = em.createNamedQuery("findAllBooks", Book05.class);
+        TypedQuery<Book05> query = em.createNamedQuery(Book05.FIND_ALL, Book05.class);
         return query.getResultList();
     }
 
     public List<CD05> findCDs() {
-        TypedQuery<CD05> query = em.createNamedQuery("findAllCDs", CD05.class);
+        TypedQuery<CD05> query = em.createNamedQuery(CD05.FIND_ALL, CD05.class);
         return query.getResultList();
     }
 

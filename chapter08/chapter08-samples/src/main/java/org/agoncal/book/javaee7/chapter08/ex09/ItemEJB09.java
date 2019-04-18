@@ -1,6 +1,5 @@
 package org.agoncal.book.javaee7.chapter08.ex09;
 
-
 import javax.annotation.Resource;
 import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
@@ -25,6 +24,7 @@ public class ItemEJB09 {
 
     @PersistenceContext(unitName = "chapter08PU")
     private EntityManager em;
+
     @Resource
     private SessionContext ctx;
 
@@ -33,12 +33,12 @@ public class ItemEJB09 {
     // ======================================
 
     public List<Book09> findBooks() {
-        TypedQuery<Book09> query = em.createNamedQuery("findAllBooks", Book09.class);
+        TypedQuery<Book09> query = em.createNamedQuery(Book09.FIND_ALL, Book09.class);
         return query.getResultList();
     }
 
     public List<CD09> findCDs() {
-        TypedQuery<CD09> query = em.createNamedQuery("findAllCDs", CD09.class);
+        TypedQuery<CD09> query = em.createNamedQuery(CD09.FIND_ALL, CD09.class);
         return query.getResultList();
     }
 
