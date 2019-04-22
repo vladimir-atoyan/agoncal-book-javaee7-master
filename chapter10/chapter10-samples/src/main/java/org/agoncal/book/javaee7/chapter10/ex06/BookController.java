@@ -7,51 +7,51 @@ import java.util.Date;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @Named
 @RequestScoped
 public class BookController {
 
-  // ======================================
-  // =             Attributes             =
-  // ======================================
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
-  @Inject
-  private BookEJB bookEJB;
+    @Inject
+    private BookEJB bookEJB;
 
-  private Book book = new Book();
-  private Date currentDate = new Date();
+    private Book book = new Book();
+    private Date currentDate = new Date();
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  public String doCreateBook() {
-    book = bookEJB.createBook(book);
-    return "listBooks.xhtml";
-  }
+    public String doCreateBook() {
+        book = bookEJB.createBook(book);
+        return "listBooks.xhtml";
+    }
 
-  // ======================================
-  // =          Getters & Setters         =
-  // ======================================
+    // ======================================
+    // =          Getters & Setters         =
+    // ======================================
 
-  public Book getBook() {
-    return book;
-  }
+    public Book getBook() {
+        return book;
+    }
 
-  public void setBook(Book book) {
-    this.book = book;
-  }
+    public void setBook(Book book) {
+        this.book = book;
+    }
 
-  public Date getCurrentDate() {
-    return currentDate;
-  }
+    public Date getCurrentDate() {
+        return currentDate;
+    }
 
-  public void setCurrentDate(Date currentDate) {
-    this.currentDate = currentDate;
-  }
+    public void setCurrentDate(Date currentDate) {
+        this.currentDate = currentDate;
+    }
 }

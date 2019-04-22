@@ -8,32 +8,32 @@ import java.util.List;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @Stateless
 public class BookEJB {
 
-  // ======================================
-  // =             Attributes             =
-  // ======================================
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
-  @PersistenceContext(unitName = "chapter10PU")
-  private EntityManager em;
+    @PersistenceContext(unitName = "chapter10PU")
+    private EntityManager em;
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  public List<Book> findBooks() {
-    TypedQuery<Book> query = em.createNamedQuery("findAllBooks", Book.class);
-    return query.getResultList();
-  }
+    public List<Book> findBooks() {
+        TypedQuery<Book> query = em.createNamedQuery("findAllBooks", Book.class);
+        return query.getResultList();
+    }
 
-  public Book createBook(Book book) {
-    em.persist(book);
-    return book;
-  }
+    public Book createBook(Book book) {
+        em.persist(book);
+        return book;
+    }
 }
