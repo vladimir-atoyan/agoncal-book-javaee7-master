@@ -9,71 +9,72 @@ import java.util.List;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @Transactional
 public class ItemService07 {
 
-  // ======================================
-  // =             Attributes             =
-  // ======================================
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
-  @PersistenceContext(unitName = "chapter09PU")
-  private EntityManager em;
-  @Inject
-  private InventoryService07 inventory;
+    @PersistenceContext(unitName = "chapter09PU")
+    private EntityManager em;
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    @Inject
+    private InventoryService07 inventory;
 
-  public List<Book07> findBooks() {
-    TypedQuery<Book07> query = em.createNamedQuery(Book07.FIND_ALL, Book07.class);
-    return query.getResultList();
-  }
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  public List<CD07> findCDs() {
-    TypedQuery<CD07> query = em.createNamedQuery(CD07.FIND_ALL, CD07.class);
-    return query.getResultList();
-  }
+    public List<Book07> findBooks() {
+        TypedQuery<Book07> query = em.createNamedQuery(Book07.FIND_ALL, Book07.class);
+        return query.getResultList();
+    }
 
-  public Book07 findBookById(Long id) {
-    return em.find(Book07.class, id);
-  }
+    public List<CD07> findCDs() {
+        TypedQuery<CD07> query = em.createNamedQuery(CD07.FIND_ALL, CD07.class);
+        return query.getResultList();
+    }
 
-  public CD07 findCDById(Long id) {
-    return em.find(CD07.class, id);
-  }
+    public Book07 findBookById(Long id) {
+        return em.find(Book07.class, id);
+    }
 
-  //@TransactionAttribute(TransactionAttributeType.REQUIRED)
-  public Book07 createBook(Book07 book) {
-    em.persist(book);
-    inventory.addItem(book);
-    return book;
-  }
+    public CD07 findCDById(Long id) {
+        return em.find(CD07.class, id);
+    }
 
-  public CD07 createCD(CD07 cd) {
-    em.persist(cd);
-    inventory.addItem(cd);
-    return cd;
-  }
+    //@TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public Book07 createBook(Book07 book) {
+        em.persist(book);
+        inventory.addItem(book);
+        return book;
+    }
 
-  public void deleteBook(Book07 book) {
-    em.remove(em.merge(book));
-  }
+    public CD07 createCD(CD07 cd) {
+        em.persist(cd);
+        inventory.addItem(cd);
+        return cd;
+    }
 
-  public void deleteCD(CD07 cd) {
-    em.remove(em.merge(cd));
-  }
+    public void deleteBook(Book07 book) {
+        em.remove(em.merge(book));
+    }
 
-  public Book07 updateBook(Book07 book) {
-    return em.merge(book);
-  }
+    public void deleteCD(CD07 cd) {
+        em.remove(em.merge(cd));
+    }
 
-  public CD07 updateCD(CD07 cd) {
-    return em.merge(cd);
-  }
+    public Book07 updateBook(Book07 book) {
+        return em.merge(book);
+    }
+
+    public CD07 updateCD(CD07 cd) {
+        return em.merge(cd);
+    }
 }

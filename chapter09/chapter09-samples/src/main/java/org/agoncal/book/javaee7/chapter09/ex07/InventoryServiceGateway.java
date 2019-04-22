@@ -11,7 +11,6 @@ import javax.ejb.TransactionAttributeType;
 import javax.inject.Inject;
 
 /**
- *
  * @author patrik
  */
 @Stateless
@@ -23,5 +22,4 @@ public class InventoryServiceGateway {
     public void addItem(Item07 item) {
         service.addItem(item);
     }
-    
 }

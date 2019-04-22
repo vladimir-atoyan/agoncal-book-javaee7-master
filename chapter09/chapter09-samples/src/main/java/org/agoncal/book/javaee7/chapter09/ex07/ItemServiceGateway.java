@@ -12,7 +12,6 @@ import javax.ejb.TransactionAttributeType;
 import javax.inject.Inject;
 
 /**
- *
  * @author patrik
  */
 @Stateless
