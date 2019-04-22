@@ -37,16 +37,14 @@ public class BookEJB implements BookEJBRemote {
         return query.getResultList();
     }
 
-    public
     @NotNull
-    Book createBook(@NotNull Book book) {
+    public Book createBook(@NotNull Book book) {
         em.persist(book);
         return book;
     }
 
-    public
     @NotNull
-    Book updateBook(@NotNull Book book) {
+    public Book updateBook(@NotNull Book book) {
         return em.merge(book);
     }
 
