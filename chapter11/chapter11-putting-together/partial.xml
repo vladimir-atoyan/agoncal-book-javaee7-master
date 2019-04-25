@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <partial-response>
-  <changes>
-    <update id="errors">
-      <![CDATA[
+    <changes>
+        <update id="errors">
+            <![CDATA[
       <ul id="errors"><li style="color:blue">	Book created </li></ul>
       ]]>
-    </update>
-    <update id="booklist">
-      <![CDATA[
+        </update>
+        <update id="booklist">
+            <![CDATA[
       <table id="booklist" border="1">
         <thead>
           <tr>
@@ -31,6 +31,6 @@
         </tbody>
       </table>
       ]]>
-    </update>
-  </changes>
+        </update>
+    </changes>
 </partial-response>

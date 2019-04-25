@@ -11,88 +11,88 @@ import java.util.List;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @Named
 @RequestScoped
 public class BookController13 {
 
-  // ======================================
-  // =             Attributes             =
-  // ======================================
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
-  //  @Inject
-  private BookEJB bookEJB;
+    //  @Inject
+    private BookEJB bookEJB;
 
-  private Book book = new Book();
-  private List<Book> bookList = new ArrayList<>();
+    private Book book = new Book();
+    private List<Book> bookList = new ArrayList<>();
 
-  private Date publishedDate = new Date();
-  private Number publishedPrice = new Integer(666);
+    private Date publishedDate = new Date();
+    private Number publishedPrice = new Integer(666);
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  public String doCreateBook() {
-    book = bookEJB.createBook(book);
-    bookList = bookEJB.findBooks();
-    return "listBooks.xhtml";
-  }
-
-  // ======================================
-  // =          Getters & Setters         =
-  // ======================================
-
-  public Book getBook() {
-    return book;
-  }
-
-  public void setBook(Book book) {
-    this.book = book;
-  }
-
-  public List<Book> getBookList() {
-    return bookList;
-  }
-
-  public void setBookList(List<Book> bookList) {
-    this.bookList = bookList;
-  }
-
-  public Date getPublishedDate() {
-    return publishedDate;
-  }
-
-  public void setPublishedDate(Date publishedDate) {
-    this.publishedDate = publishedDate;
-  }
-
-  public Number getPublishedPrice() {
-    return publishedPrice;
-  }
-
-  public void setPublishedPrice(Number publishedPrice) {
-    this.publishedPrice = publishedPrice;
-  }
-
-  @PostConstruct
-  private void initBookList() {
-    bookEJB = new BookEJB();
-  }
-
-  private class BookEJB {
-    public Book createBook(Book book) {
-      return null;
+    public String doCreateBook() {
+        book = bookEJB.createBook(book);
+        bookList = bookEJB.findBooks();
+        return "listBooks.xhtml";
     }
 
-    public List<Book> findBooks() {
-      List<Book> bookList = new ArrayList<>();
-      bookList.add(new Book("The Hitchhiker's Guide to the Galaxy", 23.99f, "Science fiction comedy book", 352, Boolean.TRUE));
-      bookList.add(new Book("Harry Potter and the Goblet of Fire", 19.79f, "Kids best seller (Book 4)", 734, Boolean.TRUE));
+    // ======================================
+    // =          Getters & Setters         =
+    // ======================================
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public List<Book> getBookList() {
+        return bookList;
+    }
+
+    public void setBookList(List<Book> bookList) {
+        this.bookList = bookList;
+    }
+
+    public Date getPublishedDate() {
+        return publishedDate;
+    }
+
+    public void setPublishedDate(Date publishedDate) {
+        this.publishedDate = publishedDate;
+    }
+
+    public Number getPublishedPrice() {
+        return publishedPrice;
+    }
+
+    public void setPublishedPrice(Number publishedPrice) {
+        this.publishedPrice = publishedPrice;
+    }
+
+    @PostConstruct
+    private void initBookList() {
+        bookEJB = new BookEJB();
+    }
+
+    private class BookEJB {
+        public Book createBook(Book book) {
+            return null;
+        }
+
+        public List<Book> findBooks() {
+            List<Book> bookList = new ArrayList<>();
+            bookList.add(new Book("The Hitchhiker's Guide to the Galaxy", 23.99f, "Science fiction comedy book", 352, Boolean.TRUE));
+            bookList.add(new Book("Harry Potter and the Goblet of Fire", 19.79f, "Kids best seller (Book 4)", 734, Boolean.TRUE));
 //      bookList.add(new Book("The Elements of Style", 6.64f, "A masterpiece in the art of clear and concise writing.", 105, Boolean.FALSE));
 //      bookList.add(new Book("Harry Potter And The Order Of The Phoenix", 9.35f, "Science fiction (Book 1)", 870, Boolean.TRUE));
 //      bookList.add(new Book("The Difference Between God and Larry Ellison", 11.99f, "God Doesn't Think He's Larry Ellison", 420, Boolean.FALSE));
@@ -108,10 +108,10 @@ public class BookController13 {
 //      bookList.add(new Book("Harjunpaa ja pahan pappi", 32.49f, "Finns read crime novels", 300, Boolean.FALSE));
 //      bookList.add(new Book("El ingenioso hidalgo don Quijote de la Mancha", 13.99f, "Classical Don Quijote", 108, Boolean.TRUE));
 //      bookList.add(new Book("The Lord of the Rings", 50.4f, "Science fiction comedy book", 1216, Boolean.TRUE));
-      bookList.add(new Book("Java EE 6 with GlassFish 3", 31.49f, "Just amazing", 458, Boolean.TRUE));
+            bookList.add(new Book("Java EE 6 with GlassFish 3", 31.49f, "Just amazing", 458, Boolean.TRUE));
 //      bookList.add(new Book("Heidis Lehr- und Wanderjahre", 68f, "Inhalt: Die Heidi-Bucher erzahlen...", 160, Boolean.TRUE));
 //      bookList.add(new Book("l Nome della Rosa", 34.99f, "Science fiction comedy book", 354, Boolean.FALSE));
-      return bookList;
+            return bookList;
+        }
     }
-  }
 }

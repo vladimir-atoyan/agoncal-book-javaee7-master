@@ -7,32 +7,32 @@ import javax.inject.Named;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @Named
 @RequestScoped
 public class BookController03 {
 
-  // ======================================
-  // =             Attributes             =
-  // ======================================
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
-  private Book book = new Book();
+    private Book book = new Book();
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  public String doCreateBook() {
-    createBook(book);
-    return "listBooks.xhtml";
-  }
+    public String doCreateBook() {
+        createBook(book);
+        return "listBooks.xhtml";
+    }
 
-  private void createBook(Book book) {
-  }
+    private void createBook(Book book) {
+    }
 
-  // Constructors, getters, setters
+    // Constructors, getters, setters
 }

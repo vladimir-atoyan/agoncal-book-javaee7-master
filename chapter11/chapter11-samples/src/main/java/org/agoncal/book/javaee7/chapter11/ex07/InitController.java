@@ -8,29 +8,29 @@ import javax.inject.Named;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @Named
 @ApplicationScoped
 public class InitController {
 
-  // ======================================
-  // =             Attributes             =
-  // ======================================
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
-  private Book defaultBook;
+    private Book defaultBook;
 
-  // ======================================
-  // =          Lifecycle methods         =
-  // ======================================
+    // ======================================
+    // =          Lifecycle methods         =
+    // ======================================
 
-  @PostConstruct
-  private void init() {
-    defaultBook = new Book("default title", 0F, "default descritpion", "0000-000", 100, true);
-  }
+    @PostConstruct
+    private void init() {
+        defaultBook = new Book("default title", 0F, "default descritpion", "0000-000", 100, true);
+    }
 
-  // Constructors, getters, setters
+    // Constructors, getters, setters
 }
