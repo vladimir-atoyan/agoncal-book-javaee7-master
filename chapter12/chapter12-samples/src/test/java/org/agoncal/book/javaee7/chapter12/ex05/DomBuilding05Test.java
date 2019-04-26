@@ -6,10 +6,10 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 public class DomBuilding05Test {
 
@@ -28,7 +28,7 @@ public class DomBuilding05Test {
     @Test
     public void shouldBuildOrder() throws Exception {
 
-        String orderXML = new DomBuilding05().buildOrder() ;
+        String orderXML = new DomBuilding05().buildOrder();
 
         assertEquals(ORDER_XML, orderXML);
 

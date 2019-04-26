@@ -2,35 +2,35 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.agoncal.book.javaee7.chapter12</groupId>
-  <artifactId>chapter12-samples</artifactId>
-  <version>1.0</version>
-  <packaging>jar</packaging>
-  <name>12 - XML and JSon (Samples)</name>
-
-  <parent>
-    <groupId>org.agoncal.book.javaee7</groupId>
-    <artifactId>chapter12</artifactId>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.agoncal.book.javaee7.chapter12</groupId>
+    <artifactId>chapter12-samples</artifactId>
     <version>1.0</version>
-  </parent>
+    <packaging>jar</packaging>
+    <name>12 - XML and JSon (Samples)</name>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.glassfish</groupId>
-      <artifactId>javax.json</artifactId>
-    </dependency>
+    <parent>
+        <groupId>org.agoncal.book.javaee7</groupId>
+        <artifactId>chapter12</artifactId>
+        <version>1.0</version>
+    </parent>
 
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+        </dependency>
 
-    <!-- Dummy -->
-    <dependency>
-      <groupId>net.sf.saxon</groupId>
-      <artifactId>saxon</artifactId>
-      <version>8.7</version>
-    </dependency>
-  </dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
+        <!-- Dummy -->
+        <dependency>
+            <groupId>net.sf.saxon</groupId>
+            <artifactId>saxon</artifactId>
+            <version>8.7</version>
+        </dependency>
+    </dependencies>
 </project>

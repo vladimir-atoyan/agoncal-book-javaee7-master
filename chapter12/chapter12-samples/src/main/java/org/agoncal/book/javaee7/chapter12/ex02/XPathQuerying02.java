@@ -14,29 +14,29 @@ import java.io.IOException;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 public class XPathQuerying02 {
 
-  public static void main(String[] args) {
-    String xmlDocument = "src/main/resources/order.xml";
+    public static void main(String[] args) {
+        String xmlDocument = "src/main/resources/order.xml";
 
-    try {
-      DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-      DocumentBuilder builder = factory.newDocumentBuilder();
-      Document document = builder.parse(xmlDocument);
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document document = builder.parse(xmlDocument);
 
-      // evaluate the XPath expression against the Document
-      XPath xpath = XPathFactory.newInstance().newXPath();
-      String expression = "/order/@total_amount";
-      Double totalAmount = (Double) xpath.evaluate(expression, document, XPathConstants.NUMBER);
-      System.out.println("totalAmount " + totalAmount);
+            // evaluate the XPath expression against the Document
+            XPath xpath = XPathFactory.newInstance().newXPath();
+            String expression = "/order/@total_amount";
+            Double totalAmount = (Double) xpath.evaluate(expression, document, XPathConstants.NUMBER);
+            System.out.println("totalAmount " + totalAmount);
 
-    } catch (ParserConfigurationException | SAXException | XPathExpressionException | IOException e) {
-      e.printStackTrace();
+        } catch (ParserConfigurationException | SAXException | XPathExpressionException | IOException e) {
+            e.printStackTrace();
+        }
     }
-  }
 }
