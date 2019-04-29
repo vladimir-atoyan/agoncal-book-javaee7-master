@@ -1,5 +1,6 @@
 package org.agoncal.book.javaee7.chapter12.ex05;
 
+import com.sun.org.apache.xml.internal.dtm.ref.DTMNodeProxy;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -17,44 +18,45 @@ import java.util.List;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 public class DomParsing05 {
 
-  public List<OrderLine05> parseOrderLines() {
+    public List<OrderLine05> parseOrderLines() {
 
-    List<OrderLine05> orderLines = new ArrayList<>();
+        List<OrderLine05> orderLines = new ArrayList<>();
 
-    try {
-      File xmlDocument = Paths.get("src/main/resources/order.xml").toFile();
+        try {
+            File xmlDocument = Paths.get("src/main/resources/order.xml").toFile();
 
-      // DOM Factory
-      DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            // DOM Factory
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
-      // Parsing the document
-      DocumentBuilder documentBuilder = factory.newDocumentBuilder();
-      Document document = documentBuilder.parse(xmlDocument);
+            // Parsing the document
+            DocumentBuilder documentBuilder = factory.newDocumentBuilder();
+            Document document = documentBuilder.parse(xmlDocument);
 
-      // Getting the order_line node
-      NodeList orderLinesNode = document.getElementsByTagName("order_line");
-      for (int i = 0; i < orderLinesNode.getLength(); i++) {
-        Element orderLineNode = (Element) orderLinesNode.item(i);
-        OrderLine05 orderLine = new OrderLine05();
-        orderLine.setItem(orderLineNode.getAttribute("item"));
-        orderLine.setQuantity(Integer.valueOf(orderLineNode.getAttribute("quantity")));
+            // Getting the order_line node
+            NodeList orderLinesNode = document.getElementsByTagName("order_line");
+            for (int i = 0; i < orderLinesNode.getLength(); i++) {
+                Element orderLineNode = (Element) orderLinesNode.item(i);
+                OrderLine05 orderLine = new OrderLine05();
+                orderLine.setItem(orderLineNode.getAttribute("item"));
+                orderLine.setQuantity(Integer.valueOf(orderLineNode.getAttribute("quantity")));
 
-        Node unitPriceNode = orderLineNode.getChildNodes().item(1);
-        orderLine.setUnitPrice(Double.valueOf(unitPriceNode.getFirstChild().getNodeValue()));
+                // next should check that the node type is Node.ELEMENT_NODE in for loop
+                Node unitPriceNode = orderLineNode.getChildNodes().item(1);
+                orderLine.setUnitPrice(Double.valueOf(unitPriceNode.getFirstChild().getNodeValue()));
 
-        orderLines.add(orderLine);
-      }
+                orderLines.add(orderLine);
+            }
 
-    } catch (SAXException | IOException | ParserConfigurationException e) {
-      e.printStackTrace();
+        } catch (SAXException | IOException | ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+        return orderLines;
     }
-    return orderLines;
-  }
 }

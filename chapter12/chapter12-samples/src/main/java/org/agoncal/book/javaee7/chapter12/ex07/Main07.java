@@ -7,22 +7,22 @@ import java.io.StringWriter;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 public class Main07 {
 
-  public static void main(String[] args) throws JAXBException {
+    public static void main(String[] args) throws JAXBException {
 
-    CreditCard07 creditCard = new CreditCard07("1234", "12/09", 6398, "Visa");
-    StringWriter writer = new StringWriter();
+        CreditCard07 creditCard = new CreditCard07("1234", "12/09", 6398, "Visa");
+        StringWriter writer = new StringWriter();
 
-    JAXBContext context = JAXBContext.newInstance(CreditCard07.class);
-    Marshaller m = context.createMarshaller();
-    m.marshal(creditCard, writer);
+        JAXBContext context = JAXBContext.newInstance(CreditCard07.class);
+        Marshaller m = context.createMarshaller();
+        m.marshal(creditCard, writer);
 
-    System.out.println(writer.toString());
-  }
+        System.out.println(writer.toString());
+    }
 }

@@ -11,49 +11,49 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 public class CreditCardJSonTest {
 
-  // ======================================
-  // =             Attributes             =
-  // ======================================
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
-  public static final String creditCardJSon =
-          "{\"creditCard\":" +
-                  "{\"number\":\"12345678\"," +
-                  "\"expiryDate\":\"10/14\"," +
-                  "\"controlNumber\":566," +
-                  "\"type\":\"Visa\"}" +
-          "}";
+    public static final String creditCardJSon = "" +
+            "{\"creditCard\":" +
+            "{\"number\":\"12345678\"," +
+            "\"expiryDate\":\"10/14\"," +
+            "\"controlNumber\":566," +
+            "\"type\":\"Visa\"}" +
+            "}";
 
-  // ======================================
-  // =              Unit tests            =
-  // ======================================
+    // ======================================
+    // =              Unit tests            =
+    // ======================================
 
-  @Test
-  public void shouldGenerateACreditCard() {
+    @Test
+    public void shouldGenerateACreditCard() {
 
-    CreditCard creditCard = new CreditCard("12345678", "10/14", 566, "Visa");
+        CreditCard creditCard = new CreditCard("12345678", "10/14", 566, "Visa");
 
-    StringWriter writer = new StringWriter();
-    JsonGenerator generator = Json.createGenerator(writer);
-    generator.writeStartObject()
-            .writeStartObject("creditCard")
-            .write("number", creditCard.getNumber())
-            .write("expiryDate", creditCard.getExpiryDate())
-            .write("controlNumber", creditCard.getControlNumber())
-            .write("type", creditCard.getType())
-            .writeEnd()
-            .writeEnd()
-            .close();
+        StringWriter writer = new StringWriter();
+        JsonGenerator generator = Json.createGenerator(writer);
+        generator.writeStartObject()
+                .writeStartObject("creditCard")
+                .write("number", creditCard.getNumber())
+                .write("expiryDate", creditCard.getExpiryDate())
+                .write("controlNumber", creditCard.getControlNumber())
+                .write("type", creditCard.getType())
+                .writeEnd()
+                .writeEnd()
+                .close();
 
-    System.out.println(writer);
+        System.out.println(writer);
 
-    assertEquals(creditCardJSon, writer.toString().trim());
+        assertEquals(creditCardJSon, writer.toString().trim());
 
-  }
+    }
 }

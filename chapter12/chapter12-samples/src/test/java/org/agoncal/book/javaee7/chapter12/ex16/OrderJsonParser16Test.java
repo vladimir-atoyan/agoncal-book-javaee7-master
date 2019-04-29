@@ -8,21 +8,21 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 public class OrderJsonParser16Test {
 
-  // ======================================
-  // =              Unit tests            =
-  // ======================================
+    // ======================================
+    // =              Unit tests            =
+    // ======================================
 
-  @Test
-  public void shouldBuildPurchaseOrder() throws FileNotFoundException {
+    @Test
+    public void shouldBuildPurchaseOrder() throws FileNotFoundException {
 
-    assertEquals("j.rorri@me.com", new OrderJsonParser16().parsePurchaseOrderAndReturnEmail().toString());
+        assertEquals("j.rorri@me.com", new OrderJsonParser16().parsePurchaseOrderAndReturnEmail().toString());
 
-  }
+    }
 }

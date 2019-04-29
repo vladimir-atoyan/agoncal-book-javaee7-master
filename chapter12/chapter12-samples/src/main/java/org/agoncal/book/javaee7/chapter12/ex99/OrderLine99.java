@@ -7,63 +7,63 @@ import javax.xml.bind.annotation.XmlElement;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class OrderLine99 {
 
-  // ======================================
-  // =             Attributes             =
-  // ======================================
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
-  @XmlAttribute
-  private String item;
-  @XmlElement(name = "unit_price")
-  private Double unitPrice;
-  @XmlAttribute
-  private Integer quantity;
+    @XmlAttribute
+    private String item;
+    @XmlElement(name = "unit_price")
+    private Double unitPrice;
+    @XmlAttribute
+    private Integer quantity;
 
-  // ======================================
-  // =            Constructors            =
-  // ======================================
+    // ======================================
+    // =            Constructors            =
+    // ======================================
 
-  public OrderLine99() {
-  }
+    public OrderLine99() {
+    }
 
-  public OrderLine99(String item, Double unitPrice, Integer quantity) {
-    this.item = item;
-    this.unitPrice = unitPrice;
-    this.quantity = quantity;
-  }
+    public OrderLine99(String item, Double unitPrice, Integer quantity) {
+        this.item = item;
+        this.unitPrice = unitPrice;
+        this.quantity = quantity;
+    }
 
-  // ======================================
-  // =          Getters & Setters         =
-  // ======================================
+    // ======================================
+    // =          Getters & Setters         =
+    // ======================================
 
-  public String getItem() {
-    return item;
-  }
+    public String getItem() {
+        return item;
+    }
 
-  public void setItem(String item) {
-    this.item = item;
-  }
+    public void setItem(String item) {
+        this.item = item;
+    }
 
-  public Double getUnitPrice() {
-    return unitPrice;
-  }
+    public Double getUnitPrice() {
+        return unitPrice;
+    }
 
-  public void setUnitPrice(Double unitPrice) {
-    this.unitPrice = unitPrice;
-  }
+    public void setUnitPrice(Double unitPrice) {
+        this.unitPrice = unitPrice;
+    }
 
-  public Integer getQuantity() {
-    return quantity;
-  }
+    public Integer getQuantity() {
+        return quantity;
+    }
 
-  public void setQuantity(Integer quantity) {
-    this.quantity = quantity;
-  }
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
 }
