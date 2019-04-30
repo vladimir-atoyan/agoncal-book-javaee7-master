@@ -6,10 +6,10 @@ import javax.jms.*;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @MessageDriven(mappedName = "jms/javaee7/Topic", activationConfig = {
         @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge"),
@@ -21,16 +21,21 @@ import javax.jms.*;
         className = "javax.jms.Topic", interfaceName = "javax.jms.Topic")
 public class ExpensiveOrderMDB implements MessageListener {
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  public void onMessage(Message message) {
-    try {
-      OrderDTO order = message.getBody(OrderDTO.class);
-      System.out.println("Expensive order received: " + order.toString());
-    } catch (JMSException e) {
-      e.printStackTrace();
+    public void onMessage(Message message) {
+        try {
+            OrderDTO order = message.getBody(OrderDTO.class);
+            System.out.println("Expensive order received: " + order.toString());
+        } catch (JMSException e) {
+            e.printStackTrace();
+        }
     }
-  }
 }
+
+
+/*
+public class ExpensiveOrderMDB {
+}*/

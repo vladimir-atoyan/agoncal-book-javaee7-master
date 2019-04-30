@@ -9,38 +9,38 @@ import javax.naming.NamingException;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 public class Consumer04 {
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    try {
-      // Gets the JNDI context
-      Context jndiContext = new InitialContext();
+        try {
+            // Gets the JNDI context
+            Context jndiContext = new InitialContext();
 
-      // Looks up the administered objects
-      ConnectionFactory connectionFactory = (ConnectionFactory) jndiContext.lookup("jms/javaee7/ConnectionFactory");
-      Destination queue = (Destination) jndiContext.lookup("jms/javaee7/Queue");
+            // Looks up the administered objects
+            ConnectionFactory connectionFactory = (ConnectionFactory) jndiContext.lookup("jms/javaee7/ConnectionFactory");
+            Destination queue = (Destination) jndiContext.lookup("jms/javaee7/Queue");
 
-      // Loops to receive the messages
-      System.out.println("\nInfinite loop. Waiting for a message...");
-      try (JMSContext context = connectionFactory.createContext()) {
-        while (true) {
-          String message = context.createConsumer(queue).receiveBody(String.class);
-          System.out.println("Message received: " + message);
+            // Loops to receive the messages
+            System.out.println("\nInfinite loop. Waiting for a message...");
+            try (JMSContext context = connectionFactory.createContext()) {
+                while (true) {
+                    String message = context.createConsumer(queue).receiveBody(String.class);
+                    System.out.println("Message received: " + message);
+                }
+            }
+
+        } catch (NamingException e) {
+            e.printStackTrace();
         }
-      }
-
-    } catch (NamingException e) {
-      e.printStackTrace();
     }
-  }
 }

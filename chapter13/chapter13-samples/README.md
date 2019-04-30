@@ -16,6 +16,10 @@ jms/javaee7/Queue
 jms/javaee7/Topic
 jms/javaee7/ConnectionFactory
 
+> asadmin delete-jms-resource jms/javaee7/ConnectionFactory
+> asadmin delete-jms-resource jms/javaee7/Queue
+> asadmin delete-jms-resource jms/javaee7/Topic
+
 Run the examples with the appclient commannd :
 > appclient -client chapter13-1.0.jar
 
