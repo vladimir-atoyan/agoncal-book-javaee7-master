@@ -13,55 +13,55 @@ import static org.mockito.Mockito.when;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @RunWith(MockitoJUnitRunner.class)
 public class CardValidator27Test {
 
-  @Mock
-  private WebServiceContext mockedContext;
+    @Mock
+    private WebServiceContext mockedContext;
 
 
-  @Test
-  public void shouldCheckCreditCardValidityForAdmins() {
+    @Test
+    public void shouldCheckCreditCardValidityForAdmins() {
 
-    when(mockedContext.isUserInRole("Admin")).thenReturn(true);
+        when(mockedContext.isUserInRole("Admin")).thenReturn(true);
 
-    CreditCard27 creditCard = new CreditCard27("12341234", "10/10", 1234, "VISA");
+        CreditCard27 creditCard = new CreditCard27("12341234", "10/10", 1234, "VISA");
 
-    CardValidator27 cardValidator = new CardValidator27();
-    cardValidator.setContext(mockedContext);
+        CardValidator27 cardValidator = new CardValidator27();
+        cardValidator.setContext(mockedContext);
 
-    assertTrue("Credit card should be valid", cardValidator.validate(creditCard));
-    creditCard.setNumber("2");
-    assertTrue("Credit card should be valid", cardValidator.validate(creditCard));
+        assertTrue("Credit card should be valid", cardValidator.validate(creditCard));
+        creditCard.setNumber("2");
+        assertTrue("Credit card should be valid", cardValidator.validate(creditCard));
 
-    creditCard.setNumber("12341233");
-    assertFalse("Credit card should not be valid", cardValidator.validate(creditCard));
-    creditCard.setNumber("1");
-    assertFalse("Credit card should not be valid", cardValidator.validate(creditCard));
-  }
+        creditCard.setNumber("12341233");
+        assertFalse("Credit card should not be valid", cardValidator.validate(creditCard));
+        creditCard.setNumber("1");
+        assertFalse("Credit card should not be valid", cardValidator.validate(creditCard));
+    }
 
-  @Test(expected = SecurityException.class)
-  public void shouldCheckCreditCardValidityForNonAdmins() {
+    @Test(expected = SecurityException.class)
+    public void shouldCheckCreditCardValidityForNonAdmins() {
 
-    when(mockedContext.isUserInRole("Admin")).thenReturn(false);
+        when(mockedContext.isUserInRole("Admin")).thenReturn(false);
 
-    CreditCard27 creditCard = new CreditCard27("12341234", "10/10", 1234, "VISA");
+        CreditCard27 creditCard = new CreditCard27("12341234", "10/10", 1234, "VISA");
 
-    CardValidator27 cardValidator = new CardValidator27();
-    cardValidator.setContext(mockedContext);
+        CardValidator27 cardValidator = new CardValidator27();
+        cardValidator.setContext(mockedContext);
 
-    assertTrue("Credit card should be valid", cardValidator.validate(creditCard));
-    creditCard.setNumber("2");
-    assertTrue("Credit card should be valid", cardValidator.validate(creditCard));
+        assertTrue("Credit card should be valid", cardValidator.validate(creditCard));
+        creditCard.setNumber("2");
+        assertTrue("Credit card should be valid", cardValidator.validate(creditCard));
 
-    creditCard.setNumber("12341233");
-    assertFalse("Credit card should not be valid", cardValidator.validate(creditCard));
-    creditCard.setNumber("1");
-    assertFalse("Credit card should not be valid", cardValidator.validate(creditCard));
-  }
+        creditCard.setNumber("12341233");
+        assertFalse("Credit card should not be valid", cardValidator.validate(creditCard));
+        creditCard.setNumber("1");
+        assertFalse("Credit card should not be valid", cardValidator.validate(creditCard));
+    }
 }

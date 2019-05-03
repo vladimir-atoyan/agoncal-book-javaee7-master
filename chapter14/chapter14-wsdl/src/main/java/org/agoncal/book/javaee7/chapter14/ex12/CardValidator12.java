@@ -8,30 +8,30 @@ import static javax.jws.WebParam.Mode.IN;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @WebService
 public class CardValidator12 {
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  public boolean validate(@WebParam(name = "Credit-Card", mode = IN) CreditCard12 creditCard) {
+    public boolean validate(@WebParam(name = "Credit-Card", mode = IN) CreditCard12 creditCard) {
 
-    Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
+        Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
 
-    if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
-      return true;
-    } else {
-      return false;
+        if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
-  }
 
-  public static void main(String[] args) {
-    Endpoint.publish("http://localhost:8080/cardValidator12", new CardValidator12());
-  }
+    public static void main(String[] args) {
+        Endpoint.publish("http://localhost:8080/cardValidator12", new CardValidator12());
+    }
 }
