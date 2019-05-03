@@ -7,23 +7,23 @@ import javax.jms.MessageListener;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @MessageDriven(mappedName = "jms/javaee7/Topic")
 public class BillingMDB09 implements MessageListener {
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  public void onMessage(Message message) {
-    try {
-      System.out.println("Message received: " + message.getBody(String.class));
-    } catch (JMSException e) {
-      e.printStackTrace();
+    public void onMessage(Message message) {
+        try {
+            System.out.println("Message received: " + message.getBody(String.class));
+        } catch (JMSException e) {
+            e.printStackTrace();
+        }
     }
-  }
 }

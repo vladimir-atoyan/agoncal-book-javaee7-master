@@ -10,10 +10,10 @@ import javax.jms.MessageListener;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @MessageDriven(mappedName = "jms/javaee6/Topic", activationConfig = {
         @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge"),
@@ -21,22 +21,22 @@ import javax.jms.MessageListener;
 })
 public class BillingMDB11 implements MessageListener {
 
-  // ======================================
-  // =             Attributes             =
-  // ======================================
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
-  @Resource
-  private MessageDrivenContext context;
+    @Resource
+    private MessageDrivenContext context;
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  public void onMessage(Message message) {
-    try {
-      System.out.println("Message received: " + message.getBody(String.class));
-    } catch (JMSException e) {
-      e.printStackTrace();
+    public void onMessage(Message message) {
+        try {
+            System.out.println("Message received: " + message.getBody(String.class));
+        } catch (JMSException e) {
+            e.printStackTrace();
+        }
     }
-  }
 }
