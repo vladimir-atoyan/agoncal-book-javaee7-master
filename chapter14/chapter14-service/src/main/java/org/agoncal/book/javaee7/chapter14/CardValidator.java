@@ -4,26 +4,26 @@ import javax.jws.WebService;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @WebService(endpointInterface = "org.agoncal.book.javaee7.chapter14.Validator")
 public class CardValidator implements Validator {
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  public boolean validate(CreditCard creditCard) {
+    public boolean validate(CreditCard creditCard) {
 
-    Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
+        Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
 
-    if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
-      return true;
-    } else {
-      return false;
+        if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
-  }
 }
