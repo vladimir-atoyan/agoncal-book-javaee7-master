@@ -6,41 +6,41 @@ import javax.xml.ws.Endpoint;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @WebService
 public class CardValidator09 {
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  @WebMethod(operationName = "ValidateCreditCard")
-  public boolean validate(CreditCard09 creditCard) {
+    @WebMethod(operationName = "ValidateCreditCard")
+    public boolean validate(CreditCard09 creditCard) {
 
-    Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
+        Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
 
-    if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
-      return true;
-    } else {
-      return false;
+        if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
-  }
 
-  @WebMethod(operationName = "ValidateCreditCardNumber")
-  public void validate(String creditCardNumber) {
-    // business logic
-  }
+    @WebMethod(operationName = "ValidateCreditCardNumber")
+    public void validate(String creditCardNumber) {
+        // business logic
+    }
 
-  @WebMethod(exclude = true)
-  public void validate(Long creditCardNumber) {
-    // business logic
-  }
+    @WebMethod(exclude = true)
+    public void validate(Long creditCardNumber) {
+        // business logic
+    }
 
-  public static void main(String[] args) {
-    Endpoint.publish("http://localhost:8080/cardValidator09", new CardValidator09());
-  }
+    public static void main(String[] args) {
+        Endpoint.publish("http://localhost:8080/cardValidator09", new CardValidator09());
+    }
 }

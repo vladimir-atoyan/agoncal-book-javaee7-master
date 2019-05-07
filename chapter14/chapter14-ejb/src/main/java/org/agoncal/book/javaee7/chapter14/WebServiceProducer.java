@@ -5,15 +5,16 @@ import javax.xml.ws.WebServiceRef;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 public class WebServiceProducer {
 
-  @Produces @CardValidatorWebService
-  @WebServiceRef
-  private CardValidatorService cardValidatorService;
+    @Produces
+    @CardValidatorWebService
+    @WebServiceRef
+    private CardValidatorService cardValidatorService;
 
 }

@@ -11,32 +11,32 @@ import java.io.PrintWriter;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @WebServlet(urlPatterns = "/servletConsumer")
 public class ServletConsumer extends HttpServlet {
 
-  @WebServiceRef
-  private CardValidatorService cardValidatorService;
+    @WebServiceRef
+    private CardValidatorService cardValidatorService;
 
-  @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    PrintWriter out = resp.getWriter();
-    out.print("<h1>Servlet Consumer</h1><br/>");
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PrintWriter out = resp.getWriter();
+        out.print("<h1>Servlet Consumer</h1><br/>");
 
-    CreditCard creditCard = new CreditCard();
-    creditCard.setNumber("12341234");
-    creditCard.setExpiryDate("10/12");
-    creditCard.setType("VISA");
-    creditCard.setControlNumber(1234);
+        CreditCard creditCard = new CreditCard();
+        creditCard.setNumber("12341234");
+        creditCard.setExpiryDate("10/12");
+        creditCard.setType("VISA");
+        creditCard.setControlNumber(1234);
 
-    CardValidator cardValidator = cardValidatorService.getCardValidatorPort();
-    out.print(cardValidator.validate(creditCard) + "<br/>");
+        CardValidator cardValidator = cardValidatorService.getCardValidatorPort();
+        out.print(cardValidator.validate(creditCard) + "<br/>");
 
-    creditCard.setNumber("12341233");
-    out.print(cardValidator.validate(creditCard) + "<br/>");
-  }
+        creditCard.setNumber("12341233");
+        out.print(cardValidator.validate(creditCard) + "<br/>");
+    }
 }

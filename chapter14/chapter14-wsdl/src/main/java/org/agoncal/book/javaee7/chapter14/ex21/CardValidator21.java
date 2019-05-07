@@ -9,87 +9,87 @@ import javax.xml.ws.Endpoint;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @WebService
 public class CardValidator21 {
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  public boolean validate(CreditCard21 creditCard) {
+    public boolean validate(CreditCard21 creditCard) {
 
-    Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
+        Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
 
-    if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
-      return true;
-    } else {
-      return false;
+        if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
-  }
 
-  public boolean validateWithException(CreditCard21 creditCard) throws CardValidatorException21 {
+    public boolean validateWithException(CreditCard21 creditCard) throws CardValidatorException21 {
 
-    Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
+        Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
 
-    if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
-      return true;
-    } else {
-      throw new CardValidatorException21();
+        if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
+            return true;
+        } else {
+            throw new CardValidatorException21();
+        }
     }
-  }
 
- public boolean validateWithExceptionAndMessage(CreditCard21 creditCard) throws CardValidatorException21 {
+    public boolean validateWithExceptionAndMessage(CreditCard21 creditCard) throws CardValidatorException21 {
 
-    Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
+        Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
 
-    if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
-      return true;
-    } else {
-      throw new CardValidatorException21("The credit card number is invalid");
+        if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
+            return true;
+        } else {
+            throw new CardValidatorException21("The credit card number is invalid");
+        }
     }
-  }
 
-  public boolean validateWithRTException(CreditCard21 creditCard) {
+    public boolean validateWithRTException(CreditCard21 creditCard) {
 
-    Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
+        Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
 
-    if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
-      return true;
-    } else {
-      throw new CardValidatorRTException21();
+        if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
+            return true;
+        } else {
+            throw new CardValidatorRTException21();
+        }
     }
-  }
 
-  public boolean validateWithRTExceptionAndMessage(CreditCard21 creditCard) {
+    public boolean validateWithRTExceptionAndMessage(CreditCard21 creditCard) {
 
-    Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
+        Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
 
-    if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
-      return true;
-    } else {
-      throw new CardValidatorRTException21("The credit card number is invalid");
+        if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
+            return true;
+        } else {
+            throw new CardValidatorRTException21("The credit card number is invalid");
+        }
     }
-  }
 
-  public boolean validateWithSOAPFaultException(CreditCard21 creditCard) throws SOAPException {
+    public boolean validateWithSOAPFaultException(CreditCard21 creditCard) throws SOAPException {
 
-    Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
+        Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
 
-    if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
-      return true;
-    } else {
-      SOAPFactory soapFactory = SOAPFactory.newInstance();
-      SOAPFault fault = soapFactory.createFault("The credit card number is invalid", new QName("ValidationFault"));
-      throw new CardValidatorSOAPFaultException21(fault);
+        if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
+            return true;
+        } else {
+            SOAPFactory soapFactory = SOAPFactory.newInstance();
+            SOAPFault fault = soapFactory.createFault("The credit card number is invalid", new QName("ValidationFault"));
+            throw new CardValidatorSOAPFaultException21(fault);
+        }
     }
-  }
 
-  public static void main(String[] args) {
-    Endpoint.publish("http://localhost:8080/cardValidator14", new CardValidator21());
-  }
+    public static void main(String[] args) {
+        Endpoint.publish("http://localhost:8080/cardValidator14", new CardValidator21());
+    }
 }

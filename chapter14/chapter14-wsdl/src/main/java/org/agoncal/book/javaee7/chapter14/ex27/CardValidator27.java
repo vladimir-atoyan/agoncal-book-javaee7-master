@@ -7,49 +7,49 @@ import javax.xml.ws.WebServiceContext;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @WebService
 public class CardValidator27 {
 
-  // ======================================
-  // =             Attributes             =
-  // ======================================
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
-  @Resource
-  private WebServiceContext context;
+    @Resource
+    private WebServiceContext context;
 
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  public boolean validate(CreditCard27 creditCard) {
+    public boolean validate(CreditCard27 creditCard) {
 
-    if (!context.isUserInRole("Admin"))
-      throw new SecurityException("Only Admins can validate cards");
+        if (!context.isUserInRole("Admin"))
+            throw new SecurityException("Only Admins can validate cards");
 
-    Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
+        Character lastDigit = creditCard.getNumber().charAt(creditCard.getNumber().length() - 1);
 
-    if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
-      return true;
-    } else {
-      return false;
+        if (Integer.parseInt(lastDigit.toString()) % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
-  }
 
-  public WebServiceContext getContext() {
-    return context;
-  }
+    public WebServiceContext getContext() {
+        return context;
+    }
 
-  public void setContext(WebServiceContext context) {
-    this.context = context;
-  }
+    public void setContext(WebServiceContext context) {
+        this.context = context;
+    }
 
-  public static void main(String[] args) {
-    Endpoint.publish("http://localhost:8080/cardValidator27", new CardValidator27());
-  }
+    public static void main(String[] args) {
+        Endpoint.publish("http://localhost:8080/cardValidator27", new CardValidator27());
+    }
 }
