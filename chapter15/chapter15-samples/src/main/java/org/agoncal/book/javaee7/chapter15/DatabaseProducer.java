@@ -6,8 +6,8 @@ import javax.persistence.PersistenceContext;
 
 /**
  * @author Antonio Goncalves
- *         http://www.antoniogoncalves.org
- *         --
+ * http://www.antoniogoncalves.org
+ * --
  */
 
 public class DatabaseProducer {

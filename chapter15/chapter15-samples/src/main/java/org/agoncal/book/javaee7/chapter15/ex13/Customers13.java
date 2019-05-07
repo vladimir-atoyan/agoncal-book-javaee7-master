@@ -8,21 +8,21 @@ import java.util.List;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @XmlRootElement
 @XmlSeeAlso(Customer13.class)
 public class Customers13 extends ArrayList<Customer13> {
 
-  // ======================================
-  // =          Getters & Setters         =
-  // ======================================
+    // ======================================
+    // =          Getters & Setters         =
+    // ======================================
 
-  @XmlElement(name = "customer")
-  public List<Customer13> getCustomers() {
-    return this;
-  }
+    @XmlElement(name = "customer")
+    public List<Customer13> getCustomers() {
+        return this;
+    }
 }

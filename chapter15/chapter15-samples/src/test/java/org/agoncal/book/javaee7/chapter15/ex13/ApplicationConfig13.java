@@ -10,38 +10,38 @@ import java.util.Set;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @ApplicationPath("rs")
 public class ApplicationConfig13 extends Application {
 
-  // ======================================
-  // =             Attributes             =
-  // ======================================
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
-  private final Set<Class<?>> classes;
+    private final Set<Class<?>> classes;
 
-  // ======================================
-  // =            Constructors            =
-  // ======================================
+    // ======================================
+    // =            Constructors            =
+    // ======================================
 
-  public ApplicationConfig13() {
-    HashSet<Class<?>> c = new HashSet<>();
-    c.add(CustomerRestService13.class);
-    c.add(MOXyJsonProvider.class);
-    classes = Collections.unmodifiableSet(c);
-  }
+    public ApplicationConfig13() {
+        HashSet<Class<?>> c = new HashSet<>();
+        c.add(CustomerRestService13.class);
+        c.add(MOXyJsonProvider.class);
+        classes = Collections.unmodifiableSet(c);
+    }
 
-  // ======================================
-  // =          Getters & Setters         =
-  // ======================================
+    // ======================================
+    // =          Getters & Setters         =
+    // ======================================
 
-  @Override
-  public Set<Class<?>> getClasses() {
-    return classes;
-  }
+    @Override
+    public Set<Class<?>> getClasses() {
+        return classes;
+    }
 
 }

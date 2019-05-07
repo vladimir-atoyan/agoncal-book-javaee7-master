@@ -10,38 +10,38 @@ import javax.ws.rs.core.Response;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @Path("/12/customer")
 public class CustomerRestService12 {
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  @GET
-  public String getAsPlainText() {
-    return new Customer11("John", "Smith", "jsmith@gmail.com", "1234565").toString();
-  }
+    @GET
+    public String getAsPlainText() {
+        return new Customer11("John", "Smith", "jsmith@gmail.com", "1234565").toString();
+    }
 
-  @GET
-  @Path("max")
-  public Long getMaximumBonusAllowed() {
-    return 1234L;
-  }
+    @GET
+    @Path("max")
+    public Long getMaximumBonusAllowed() {
+        return 1234L;
+    }
 
-  @GET
-  @Produces(MediaType.APPLICATION_XML)
-  public Customer12 getAsXML() {
-    return new Customer12("John", "Smith", "jsmith@gmail.com", "1234565");
-  }
+    @GET
+    @Produces(MediaType.APPLICATION_XML)
+    public Customer12 getAsXML() {
+        return new Customer12("John", "Smith", "jsmith@gmail.com", "1234565");
+    }
 
-  @GET
-  @Produces(MediaType.APPLICATION_JSON)
-  public Response getAsJson() {
-    return Response.ok(new Customer12("John", "Smith", "jsmith@gmail.com", "1234565"), MediaType.APPLICATION_JSON).build();
-  }
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAsJson() {
+        return Response.ok(new Customer12("John", "Smith", "jsmith@gmail.com", "1234565"), MediaType.APPLICATION_JSON).build();
+    }
 }

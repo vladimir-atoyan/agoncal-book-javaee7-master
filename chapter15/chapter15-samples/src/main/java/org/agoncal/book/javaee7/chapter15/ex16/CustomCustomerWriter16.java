@@ -13,35 +13,36 @@ import java.lang.reflect.Type;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @Provider
 @Produces("custom/format")
 public class CustomCustomerWriter16 implements MessageBodyWriter<Customer16> {
 
-  // ======================================
-  // =           Public Methods           =
-  // ======================================
+    // ======================================
+    // =           Public Methods           =
+    // ======================================
 
-  @Override
-  public boolean isWriteable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {
-    return Customer16.class.isAssignableFrom(type);
-  }
+    @Override
+    public boolean isWriteable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {
+        return Customer16.class.isAssignableFrom(type);
+    }
 
-  @Override
-  public void writeTo(Customer16 customer, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType, MultivaluedMap<String, Object> httpHeaders, OutputStream outputStream) throws IOException, WebApplicationException {
-    outputStream.write(customer.getId().getBytes());
-    outputStream.write('/');
-    outputStream.write(customer.getFirstName().getBytes());
-    outputStream.write('/');
-    outputStream.write(customer.getLastName().getBytes());
-  }
+    @Override
+    public void writeTo(Customer16 customer, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType,
+                        MultivaluedMap<String, Object> httpHeaders, OutputStream outputStream) throws IOException, WebApplicationException {
+        outputStream.write(customer.getId().getBytes());
+        outputStream.write('/');
+        outputStream.write(customer.getFirstName().getBytes());
+        outputStream.write('/');
+        outputStream.write(customer.getLastName().getBytes());
+    }
 
-  @Override
-  public long getSize(Customer16 customer, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {
-    return customer.getId().length() + 1 + customer.getFirstName().length() + 1 + customer.getLastName().length();
-  }
+    @Override
+    public long getSize(Customer16 customer, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {
+        return customer.getId().length() + 1 + customer.getFirstName().length() + 1 + customer.getLastName().length();
+    }
 }

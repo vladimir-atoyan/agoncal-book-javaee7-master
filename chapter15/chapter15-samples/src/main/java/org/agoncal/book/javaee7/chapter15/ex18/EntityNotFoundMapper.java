@@ -8,15 +8,15 @@ import javax.ws.rs.ext.Provider;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @Provider
 public class EntityNotFoundMapper implements ExceptionMapper<EntityNotFoundException> {
 
-  public Response toResponse(javax.persistence.EntityNotFoundException ex) {
-    return Response.status(404).entity(ex.getMessage()).type(MediaType.TEXT_PLAIN).build();
-  }
+    public Response toResponse(javax.persistence.EntityNotFoundException ex) {
+        return Response.status(404).entity(ex.getMessage()).type(MediaType.TEXT_PLAIN).build();
+    }
 }

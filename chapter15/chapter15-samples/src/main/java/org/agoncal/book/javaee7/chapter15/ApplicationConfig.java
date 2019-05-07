@@ -14,43 +14,43 @@ import java.util.Set;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @ApplicationPath("rs")
 public class ApplicationConfig extends Application {
 
-  // ======================================
-  // =             Attributes             =
-  // ======================================
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
-  private final Set<Class<?>> classes;
+    private final Set<Class<?>> classes;
 
-  // ======================================
-  // =            Constructors            =
-  // ======================================
+    // ======================================
+    // =            Constructors            =
+    // ======================================
 
-  public ApplicationConfig() {
-    HashSet<Class<?>> c = new HashSet<>();
-    c.add(BookRestService03.class);
-    c.add(BookRestService04.class);
-    c.add(ItemRestService05.class);
-    c.add(CustomerRestService15.class);
+    public ApplicationConfig() {
+        HashSet<Class<?>> c = new HashSet<>();
+        c.add(BookRestService03.class);
+        c.add(BookRestService04.class);
+        c.add(ItemRestService05.class);
+        c.add(CustomerRestService15.class);
 
-    c.add(MOXyJsonProvider.class);
+        c.add(MOXyJsonProvider.class);
 
-    classes = Collections.unmodifiableSet(c);
-  }
+        classes = Collections.unmodifiableSet(c);
+    }
 
-  // ======================================
-  // =          Getters & Setters         =
-  // ======================================
+    // ======================================
+    // =          Getters & Setters         =
+    // ======================================
 
-  @Override
-  public Set<Class<?>> getClasses() {
-    return classes;
-  }
+    @Override
+    public Set<Class<?>> getClasses() {
+        return classes;
+    }
 
 }

@@ -16,7 +16,7 @@
     </parent>
 
     <dependencies>
-        <!-- The javaee-api dependency is not necessary, but it's amends context helps -->
+        <!-- The javaee-api dependency is not necessary, but it amends the context help -->
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>

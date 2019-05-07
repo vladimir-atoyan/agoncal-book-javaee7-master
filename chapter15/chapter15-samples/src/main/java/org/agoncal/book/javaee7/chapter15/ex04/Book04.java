@@ -8,10 +8,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @Entity
 @NamedQuery(name = Book04.FIND_ALL, query = "SELECT b FROM Book04 b")
@@ -50,9 +50,9 @@ public class Book04 {
         this.illustrations = illustrations;
     }
 
-  // ======================================
-  // =          Getters & Setters         =
-  // ======================================
+    // ======================================
+    // =          Getters & Setters         =
+    // ======================================
 
     public Long getId() {
         return id;

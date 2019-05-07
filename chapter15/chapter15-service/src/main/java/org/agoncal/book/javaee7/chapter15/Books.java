@@ -9,37 +9,37 @@ import java.util.List;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 @XmlRootElement
 @XmlSeeAlso(Book.class)
 public class Books extends ArrayList<Book> {
 
-  // ======================================
-  // =            Constructors            =
-  // ======================================
+    // ======================================
+    // =            Constructors            =
+    // ======================================
 
-  public Books() {
-    super();
-  }
+    public Books() {
+        super();
+    }
 
-  public Books(Collection<? extends Book> c) {
-    super(c);
-  }
+    public Books(Collection<? extends Book> c) {
+        super(c);
+    }
 
-  // ======================================
-  // =          Getters & Setters         =
-  // ======================================
+    // ======================================
+    // =          Getters & Setters         =
+    // ======================================
 
-  @XmlElement(name = "book")
-  public List<Book> getBooks() {
-    return this;
-  }
+    @XmlElement(name = "book")
+    public List<Book> getBooks() {
+        return this;
+    }
 
-  public void setBooks(List<Book> books) {
-    this.addAll(books);
-  }
+    public void setBooks(List<Book> books) {
+        this.addAll(books);
+    }
 }

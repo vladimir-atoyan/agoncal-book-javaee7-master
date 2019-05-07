@@ -6,12 +6,12 @@ import javax.ws.rs.Produces;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
- *         <p/>
- *         curl http://localhost:8080/chapter15-service-1.0/rs/02/book
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
+ * <p/>
+ * curl http://localhost:8080/chapter15-service-1.0/rs/02/book
  */
 @Path("/03/book")
 public class BookRestService03 {

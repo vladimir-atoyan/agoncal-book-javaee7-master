@@ -6,17 +6,17 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 public class URISplitTest {
 
-  @Test
-  public void shouldGetTheLastPath() {
+    @Test
+    public void shouldGetTheLastPath() {
 
-    String id = "http://localhost:8080/chapter15-service-1.0/rs/book/33".split("/")[6];
-    assertEquals("33", id);
-  }
+        String id = "http://localhost:8080/chapter15-service-1.0/rs/book/33".split("/")[6];
+        assertEquals("33", id);
+    }
 }

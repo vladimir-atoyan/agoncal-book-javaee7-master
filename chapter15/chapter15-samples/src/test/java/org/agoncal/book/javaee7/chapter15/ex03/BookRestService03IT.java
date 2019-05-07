@@ -25,87 +25,87 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
+ * APress Book - Beginning Java EE 7 with Glassfish 4
+ * http://www.apress.com/
+ * http://www.antoniogoncalves.org
+ * --
  */
 public class BookRestService03IT {
 
-  // ======================================
-  // =             Attributes             =
-  // ======================================
+    // ======================================
+    // =             Attributes             =
+    // ======================================
 
-  private static HttpServer server;
-  private static URI uri = UriBuilder.fromUri("http://localhost/").port(8282).build();
-  private static Client client = ClientBuilder.newClient();
+    private static HttpServer server;
+    private static URI uri = UriBuilder.fromUri("http://localhost/").port(8282).build();
+    private static Client client = ClientBuilder.newClient();
 
-  // ======================================
-  // =          Lifecycle Methods         =
-  // ======================================
+    // ======================================
+    // =          Lifecycle Methods         =
+    // ======================================
 
-  @BeforeClass
-  public static void init() throws IOException {
-    // create a new server listening at port 8080
-    server = HttpServer.create(new InetSocketAddress(uri.getPort()), 0);
+    @BeforeClass
+    public static void init() throws IOException {
+        // create a new server listening at port 8080
+        server = HttpServer.create(new InetSocketAddress(uri.getPort()), 0);
 
-    // create a handler wrapping the JAX-RS application
-    HttpHandler handler = RuntimeDelegate.getInstance().createEndpoint(new ApplicationConfig03(), HttpHandler.class);
+        // create a handler wrapping the JAX-RS application
+        HttpHandler handler = RuntimeDelegate.getInstance().createEndpoint(new ApplicationConfig03(), HttpHandler.class);
 
-    // map JAX-RS handler to the server root
-    server.createContext(uri.getPath(), handler);
+        // map JAX-RS handler to the server root
+        server.createContext(uri.getPath(), handler);
 
-    // start the server
-    server.start();
-  }
+        // start the server
+        server.start();
+    }
 
-  @AfterClass
-  public static void stop() {
-    server.stop(0);
-  }
+    @AfterClass
+    public static void stop() {
+        server.stop(0);
+    }
 
-  // ======================================
-  // =              Unit tests            =
-  // ======================================
+    // ======================================
+    // =              Unit tests            =
+    // ======================================
 
-  @Test
-  public void shouldCheckForH2G2Verbose() throws URISyntaxException {
+    @Test
+    public void shouldCheckForH2G2Verbose() throws URISyntaxException {
 
-    Client client = ClientBuilder.newClient();
-    WebTarget target = client.target("http://localhost:8282/03/book");
-    assertEquals(Response.Status.OK.getStatusCode(), target.request(MediaType.TEXT_PLAIN).get().getStatus());
-    URI uri = new URI("http://localhost:8282/03/book");
-    target = client.target(uri);
-    assertEquals(Response.Status.OK.getStatusCode(), target.request(MediaType.TEXT_PLAIN).get().getStatus());
-  }
+        Client client = ClientBuilder.newClient();
+        WebTarget target = client.target("http://localhost:8282/03/book");
+        assertEquals(Response.Status.OK.getStatusCode(), target.request(MediaType.TEXT_PLAIN).get().getStatus());
+        URI uri = new URI("http://localhost:8282/03/book");
+        target = client.target(uri);
+        assertEquals(Response.Status.OK.getStatusCode(), target.request(MediaType.TEXT_PLAIN).get().getStatus());
+    }
 
-  @Test
-  public void shouldCheckForH2G2WithWebTarget() {
+    @Test
+    public void shouldCheckForH2G2WithWebTarget() {
 
-    Client client = ClientBuilder.newClient();
-    WebTarget target = client.target("http://localhost:8282/03/book");
-    Invocation.Builder builder = target.request(MediaType.TEXT_PLAIN);
-    Response response = builder.get();
-    String entity = response.readEntity(String.class);
+        Client client = ClientBuilder.newClient();
+        WebTarget target = client.target("http://localhost:8282/03/book");
+        Invocation.Builder builder = target.request(MediaType.TEXT_PLAIN);
+        Response response = builder.get();
+        String entity = response.readEntity(String.class);
 
-    assertEquals("H2G2", entity);
-    assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-    assertEquals("H2G2 is 4 characters", 4, entity.length());
-  }
+        assertEquals("H2G2", entity);
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+        assertEquals("H2G2 is 4 characters", 4, entity.length());
+    }
 
-  @Test
-  public void shouldCheckForH2G2WithInvocation() {
+    @Test
+    public void shouldCheckForH2G2WithInvocation() {
 
-    Client client = ClientBuilder.newClient();
-    WebTarget target = client.target("http://localhost:8282/03/book");
-    Invocation invocation = target.request(MediaType.TEXT_PLAIN).buildGet();
-    Response response = invocation.invoke();
-    String entity = response.readEntity(String.class);
+        Client client = ClientBuilder.newClient();
+        WebTarget target = client.target("http://localhost:8282/03/book");
+        Invocation invocation = target.request(MediaType.TEXT_PLAIN).buildGet();
+        Response response = invocation.invoke();
+        String entity = response.readEntity(String.class);
 
-    assertEquals("H2G2", entity);
-    assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-    assertEquals("H2G2 is 4 characters", 4, entity.length());
-  }
+        assertEquals("H2G2", entity);
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+        assertEquals("H2G2 is 4 characters", 4, entity.length());
+    }
 
 // TODO  @Test
 //  public void shouldCheckForH2G2Configuration() {
@@ -124,49 +124,49 @@ public class BookRestService03IT {
 //    assertTrue(response.getHeaderString("Content-type").equals("text/plain"));
 //  }
 
-  @Test
-  public void shouldCheckForH2G2String() {
-    assertEquals("H2G2", ClientBuilder.newClient().target("http://localhost:8282/03/book").request().get(String.class));
-  }
+    @Test
+    public void shouldCheckForH2G2String() {
+        assertEquals("H2G2", ClientBuilder.newClient().target("http://localhost:8282/03/book").request().get(String.class));
+    }
 
-  @Test
-  public void shouldCheckForH2G2Entity() {
-    Response response = ClientBuilder.newClient().target("http://localhost:8282/03/book").request().get();
-    assertEquals("H2G2", response.readEntity(String.class));
-  }
+    @Test
+    public void shouldCheckForH2G2Entity() {
+        Response response = ClientBuilder.newClient().target("http://localhost:8282/03/book").request().get();
+        assertEquals("H2G2", response.readEntity(String.class));
+    }
 
-  @Test
-  public void shouldCheckForWrongMediaType() {
-    Response response = ClientBuilder.newClient().target("http://localhost:8282/03/book").request(MediaType.APPLICATION_OCTET_STREAM).get();
-    assertEquals(Response.Status.NOT_ACCEPTABLE.getStatusCode(), response.getStatus());
-  }
+    @Test
+    public void shouldCheckForWrongMediaType() {
+        Response response = ClientBuilder.newClient().target("http://localhost:8282/03/book").request(MediaType.APPLICATION_OCTET_STREAM).get();
+        assertEquals(Response.Status.NOT_ACCEPTABLE.getStatusCode(), response.getStatus());
+    }
 
-  @Test
-  public void shouldCheckForWrongURI() {
-    Response response = ClientBuilder.newClient().target("http://localhost:8282/03/dummy").request(MediaType.TEXT_PLAIN).get();
-    assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
-  }
+    @Test
+    public void shouldCheckForWrongURI() {
+        Response response = ClientBuilder.newClient().target("http://localhost:8282/03/dummy").request(MediaType.TEXT_PLAIN).get();
+        assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
+    }
 
-  @Test
-  public void shouldCheckForH2G2Short() {
-    assertEquals("H2G2", client.target(uri).path("03/book").request(MediaType.TEXT_PLAIN).get(String.class));
-  }
+    @Test
+    public void shouldCheckForH2G2Short() {
+        assertEquals("H2G2", client.target(uri).path("03/book").request(MediaType.TEXT_PLAIN).get(String.class));
+    }
 
-  @Test
-  public void shouldCheckForH2G2WithSeveralPaths() {
-    assertEquals("H2G2", client.target(uri).path("03").path("book").request(MediaType.TEXT_PLAIN).get(String.class));
-  }
+    @Test
+    public void shouldCheckForH2G2WithSeveralPaths() {
+        assertEquals("H2G2", client.target(uri).path("03").path("book").request(MediaType.TEXT_PLAIN).get(String.class));
+    }
 
-  @Test
-  public void shouldCheckForH2G2WithResponse() {
-    Response response = client.target(UriBuilder.fromUri(uri).path("03/book").build()).request("text/plain").get();
-    assertEquals(200, response.getStatus());
-    assertTrue(response.hasEntity());
-    assertTrue("H2G2".equals(response.readEntity(String.class)));
-  }
+    @Test
+    public void shouldCheckForH2G2WithResponse() {
+        Response response = client.target(UriBuilder.fromUri(uri).path("03/book").build()).request("text/plain").get();
+        assertEquals(200, response.getStatus());
+        assertTrue(response.hasEntity());
+        assertTrue("H2G2".equals(response.readEntity(String.class)));
+    }
 
-  @Test
-  public void shouldCheckForApplicationWadl() {
-    assertTrue(ClientBuilder.newClient().target(uri).path("application.wadl").request(MediaTypes.WADL_TYPE).get(String.class).length() > 0);
-  }
+    @Test
+    public void shouldCheckForApplicationWadl() {
+        assertTrue(ClientBuilder.newClient().target(uri).path("application.wadl").request(MediaTypes.WADL_TYPE).get(String.class).length() > 0);
+    }
 }
