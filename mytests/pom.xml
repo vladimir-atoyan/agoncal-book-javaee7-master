@@ -19,6 +19,7 @@
         <module>MyHibernateTest</module>
         <module>ws-autotesting-master</module>
         <module>arquillian-tutorial</module>
+        <module>arquillian-tutorial-rinse-repeat</module>
     </modules>
 
 </project>
