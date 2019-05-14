@@ -23,6 +23,7 @@
         <module>chapter13</module>
         <module>chapter14</module>
         <module>chapter15</module>
+        <module>mytests</module>
     </modules>
 
     <!-- testing on github for CRLF
@@ -313,7 +314,8 @@
                             <phase>generate-sources</phase>
                             <configuration>
                                 <processors>
-					<processor>org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor</processor>
+                                    <processor>org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor
+                                    </processor>
                                 </processors>
                             </configuration>
                         </execution>
